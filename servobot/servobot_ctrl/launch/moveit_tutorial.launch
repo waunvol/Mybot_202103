@@ -1,0 +1,5 @@
+<launch>
+    <node name="moveit_ctrl" pkg="servobot_ctrl" type="moveit_ctrl" output="screen"/>
+    <remap from="planning_Scene" to="/move_group/monitored_planning_scene"/>
+
+</launch>

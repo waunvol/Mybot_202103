@@ -1,0 +1,29 @@
+<launch>
+    <include file="$(find my_arm_control)/launch/rosserial.launch"/>
+
+    <!--robot description-->
+    <arg name="robot_description" default="robot_description"/>
+
+    <!-- Load universal robot description format (URDF) -->
+    <!-- <param name="$(arg robot_description)" command="xacro  '$(find servobot_description)/urdf/xacro/servobot.xacro'"/> -->
+      <param name="robot_description"   textfile="$(find armbot_v2)/urdf/armbot_v2.urdf" />
+
+    <!-- my hardwareinterface -->
+    <node name="servobot_hwinterface" pkg="servobot_ctrl" type="servobot_hwinterface" output="screen"/>
+
+    <!-- Load joint controller configurations from YAML file to parameter server -->
+    <rosparam file="$(find servobot_ctrl)/config/servobot_moveit_controller.yaml" command="load"/>
+
+    <!-- load the controllers -->
+    <node name="servobot_controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" args="servobot_controller"/>
+        
+
+    <!--about joint states-->
+    <node name="joint_controller_spawner" pkg="controller_manager" type="spawner" respawn="false" 
+    output="screen" args="joint_state_controller" />
+
+
+
+
+</launch>

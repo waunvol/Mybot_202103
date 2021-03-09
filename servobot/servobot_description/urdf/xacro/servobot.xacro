@@ -1,0 +1,469 @@
+<robot
+  name="servo_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<link name = "world"/>
+<joint name="base_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint> 
+
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0011884 0.00055308 0.032694"
+        rpy="0 0 0" />
+      <mass
+        value="0.072744" />
+      <inertia
+        ixx="6.2559E-05"
+        ixy="-4.4148E-07"
+        ixz="-1.3886E-05"
+        iyy="6.8098E-05"
+        iyz="-5.8879E-07"
+        izz="5.8102E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link0">
+    <inertial>
+      <origin
+        xyz="-0.0101720623867661 -0.00205290963860256 0.012361658061321"
+        rpy="0 0 0" />
+      <mass
+        value="0.0353436334303481" />
+      <inertia
+        ixx="6.46825031271082E-06"
+        ixy="-2.72245592681754E-07"
+        ixz="-1.55883494608516E-08"
+        iyy="7.15404017730778E-06"
+        iyz="-1.85817896870057E-07"
+        izz="1.0660821619004E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/link0.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/link0.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint0"
+    type="revolute">
+    <origin
+      xyz="0 0 0.079"
+      rpy="0 6.5995E-17 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link0" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.2"
+      upper="1.2"
+      effort="5"
+      velocity="2" />
+  </joint>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0.00114052336371454 -0.0235000000018582 0.0329742722703748"
+        rpy="0 0 0" />
+      <mass
+        value="0.0120474627151407" />
+      <inertia
+        ixx="1.02107315156678E-05"
+        ixy="3.1471283661672E-21"
+        ixz="-5.79802302009495E-22"
+        iyy="4.76556246275553E-06"
+        iyz="1.41077143719453E-21"
+        izz="6.69555625904619E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="revolute">
+    <origin
+      xyz="-0.0017905 0.0235 0.012526"
+      rpy="0 -2.8284E-17 0" />
+    <parent
+      link="link0" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.2"
+      upper="1.2"
+      effort="5"
+      velocity="2" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="-6.50900167098456E-12 -0.0270528745593164 0.0244207390899418"
+        rpy="0 0 0" />
+      <mass
+        value="0.0706874109013024" />
+      <inertia
+        ixx="3.65612071927322E-05"
+        ixy="-8.05347051906259E-15"
+        ixz="9.86248110292613E-07"
+        iyy="3.33976734616283E-05"
+        iyz="-5.4605394972078E-14"
+        izz="1.67866182102254E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0.0011405 0.0015 0.064974"
+      rpy="0 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="5"
+      velocity="2" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 -0.025 0.032"
+        rpy="0 0 0" />
+      <mass
+        value="0.0120474627151407" />
+      <inertia
+        ixx="1.02107315156678E-05"
+        ixy="6.31492620960283E-21"
+        ixz="4.15309456082725E-22"
+        iyy="4.76556246275553E-06"
+        iyz="1.28684174431287E-21"
+        izz="6.69555625904619E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0 0 0.048841"
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.2"
+      upper="1.2"
+      effort="5"
+      velocity="2" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="-4.16333634234434E-17 0.0270528745360344 0.0244207391370531"
+        rpy="0 0 0" />
+      <mass
+        value="0.070687410752001" />
+      <inertia
+        ixx="3.65722048848125E-05"
+        ixy="1.99052742604761E-20"
+        ixz="9.79268936473673E-07"
+        iyy="3.3413080447352E-05"
+        iyz="1.64112633530521E-20"
+        izz="1.67910274372389E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0 -0.05 0.064"
+      rpy="0 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-1.2"
+      upper="1.2"
+      effort="5"
+      velocity="2" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-0.00144236036078239 -0.0235000000018581 0.0195477489741051"
+        rpy="0 0 0" />
+      <mass
+        value="0.00602373135757036" />
+      <inertia
+        ixx="4.1085324849624E-06"
+        ixy="4.29879362068518E-21"
+        ixz="-1.17932938173794E-21"
+        iyy="1.38594795850627E-06"
+        iyz="7.24403992241584E-21"
+        izz="3.3477781295231E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://servobot_description/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint5"
+    type="revolute">
+    <origin
+      xyz="-0.0014424 0.0015 0.04843"
+      rpy="0 -3.7711E-17 3.1416" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.2"
+      upper="1.2"
+      effort="5"
+      velocity="2" />
+  </joint>
+
+<!--transmission-->
+<transmission name="tran0">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint0">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor0">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+
+    </actuator>
+  </transmission>
+
+<transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+<transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+<transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+<transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint4">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+<transmission name="tran5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint5">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+      <mechanicalReduction>1</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+
+</robot>
